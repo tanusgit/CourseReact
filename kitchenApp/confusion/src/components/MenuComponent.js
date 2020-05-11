@@ -7,6 +7,8 @@ class Menu extends Component{
            selectedDish: null
         };
     }
+
+    
     onDishSelect(dish){
         this.setState({selectedDish: dish});
     }
@@ -18,6 +20,8 @@ class Menu extends Component{
                     <CardBody>
                     <CardTitle>{dish.name}</CardTitle>
                     <CardText>{dish.description}</CardText>
+                    <CardText>{dish.price}</CardText>
+                    <CardText>{dish.category}</CardText>
                     </CardBody>
                 </Card>
             );
@@ -32,12 +36,12 @@ class Menu extends Component{
     render(){
         const menu = this.props.dishes.map((dish)=>{
             return(
-                <div key={dish.id} className="col-12 col-md-5 m-1">
+                <div key={dish.id} className="col-md-3 m-1">
                     <Card onClick={() => this.onDishSelect(dish)}>
                        
                     <CardImg width="100%" src={dish.image} alt={dish.name}/>
                         
-                        <CardImgOverlay body className="ml-5">
+                        <CardImgOverlay body className="ml-1">
                             <CardTitle>
                                 {dish.name}
                             </CardTitle>
@@ -46,6 +50,8 @@ class Menu extends Component{
                 </div>
             );
         });
+
+        console.log("menu componebt render is invoked");
         return (
             
             <div className="container">
