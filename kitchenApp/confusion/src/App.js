@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import {Navbar, NavbarBrand} from 'reactstrap';
 import './App.css';
 import Menu from './components/MenuComponent';
 import {DISHESLIST} from './shared/dishes';
-import DishDetails from './components/DishDetails';
-
-
+import Main from './components/MainComponenet';
 
 class App extends Component {
   constructor(props){
@@ -18,13 +15,14 @@ class App extends Component {
   render(){
   return (
     <div>
-      <Navbar dark color="primary">
+      {/*<Navbar dark color="primary">
         <div className="container">
           <NavbarBrand href="/">
           Ristorente Con Fusion
           </NavbarBrand>
         </div>
-      </Navbar>
+  </Navbar>*/}
+    <Main />
       <Menu dishes={this.state.ConfusionDishes}/>
       {/*<DishDetails dishes={this.state.ConfusionDishes}></DishDetails>*/}
     </div>

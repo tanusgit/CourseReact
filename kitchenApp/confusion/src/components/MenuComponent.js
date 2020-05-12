@@ -34,7 +34,7 @@ class Menu extends Component{
     }
 
     render(){
-        const menu = this.props.dishes.map((dish)=>{
+         const menu = this.props.dishes.map((dish)=>{
             return(
                 <div key={dish.id} className="col-md-3 m-1">
                     <Card onClick={() => this.onDishSelect(dish)}>
@@ -50,8 +50,6 @@ class Menu extends Component{
                 </div>
             );
         });
-
-        console.log("menu componebt render is invoked");
         return (
             
             <div className="container">
