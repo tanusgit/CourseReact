@@ -4,7 +4,7 @@ import './App.css';
 import Menu from './components/MenuComponent';
 import {DISHESLIST} from './shared/dishes';
 import Main from './components/MainComponenet';
-
+import {BrowserRouter} from 'react-router-dom';
 class App extends Component {
   constructor(props){
     super(props);
@@ -14,6 +14,7 @@ class App extends Component {
   }
   render(){
   return (
+    <BrowserRouter>
     <div>
       {/*<Navbar dark color="primary">
         <div className="container">
@@ -23,9 +24,10 @@ class App extends Component {
         </div>
   </Navbar>*/}
     <Main />
-      <Menu dishes={this.state.ConfusionDishes}/>
+     {/* <Menu dishes={this.state.ConfusionDishes}/>*/}
       {/*<DishDetails dishes={this.state.ConfusionDishes}></DishDetails>*/}
     </div>
+    </BrowserRouter>
   );
 }
 }
