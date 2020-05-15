@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Breadcrumb, BreadcrumbItem, Button, Row,FormFeedback, FormForm, FormGroup, Label, Input, Col} from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Button, Row,FormFeedback, Form, FormGroup, Label, Input, Col} from 'reactstrap';
 import { Link } from 'react-router-dom';
 class Contact extends Component {
 
@@ -135,7 +135,7 @@ class Contact extends Component {
                                     valid={errors.firstname === ''}
                                     invalid={errors.firstname !== ''}
                                     onBlur={this.handleBlur('firstname')}
-                                    onChange={this.handleSubmit}/>
+                                    onChange={this.handleInputChange}/>
                                     <FormFeedback>
                                        {errors.firstname} 
                                     </FormFeedback>
@@ -150,7 +150,7 @@ class Contact extends Component {
                                     valid={errors.lastname === ''}
                                     invalid={errors.lastname !== ''}
                                     onBlur={this.handleBlur('lastname')}
-                                     onChange={this.handleSubmit}/>
+                                     onChange={this.handleInputChange}/>
                                      <FormFeedback>
                                        {errors.lastname} 
                                     </FormFeedback>
@@ -165,7 +165,7 @@ class Contact extends Component {
                                     valid={errors.telnum === ''}
                                     invalid={errors.telnum !== ''}
                                     onBlur={this.handleBlur('telnum')}
-                                    onChange={this.handleSubmit}/>
+                                    onChange={this.handleInputChange}/>
                                     <FormFeedback>
                                        {errors.telnum} 
                                     </FormFeedback>
@@ -180,7 +180,7 @@ class Contact extends Component {
                                     valid={errors.email === ''}
                                     invalid={errors.email !== ''}
                                     onBlur={this.handleBlur('email')}
-                                    onChange={this.handleSubmit}/>
+                                    onChange={this.handleInputChange}/>
                                     <FormFeedback>
                                        {errors.email} 
                                     </FormFeedback>
@@ -192,7 +192,7 @@ class Contact extends Component {
                                         <Label check>
                                            <Input type="checkbox" name="agree"
                                            checked={this.state.agree}
-                                           onChange={this.handleSubmit}/>{' '}
+                                           onChange={this.handleInputChange}/>{' '}
                                            <strong>May we contact you?</strong>
                                          
                                         </Label>
@@ -201,7 +201,7 @@ class Contact extends Component {
                                 <Col md={{size: 3, offset: 1}}>
                                     <Input type = "select" name= "contactType"
                                     value={this.state.contactType}
-                                    onChange={this.handleSubmit}>
+                                    onChange={this.handleInputChange}>
                                     <option>Tel.</option>
                                     <option>Email</option>
                                     </Input>
@@ -213,7 +213,7 @@ class Contact extends Component {
                                     <Input type="textarea" id="message" name="message"
                                    rows="12"
                                     value={this.state.message}
-                                    onChange={this.handleSubmit}/>
+                                    onChange={this.handleInputChange}/>
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
