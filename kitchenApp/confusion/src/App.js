@@ -24,7 +24,7 @@ class App extends Component {
         </div>
   </Navbar>*/}
     <Main />
-     {/* <Menu dishes={this.state.ConfusionDishes}/>*/}
+     {/*<Menu dishes={this.state.ConfusionDishes}/>*/}
       {/*<DishDetails dishes={this.state.ConfusionDishes}></DishDetails>*/}
     </div>
     </BrowserRouter>
