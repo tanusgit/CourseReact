@@ -3,6 +3,7 @@ import { Breadcrumb, BreadcrumbItem, Card, CardImg, CardTitle, CardImgOverlay, C
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
 import { LEADERS } from './leader';
+import RenderLeader from './RenderLeader';
 
 class About extends Component {
 
@@ -12,36 +13,6 @@ class About extends Component {
     }
 
     render() {
-        const leaders = this.props.leaders.map((lead) => {
-            return (
-                <div key={lead.id} className="col-md-12 m-1">
-                    <Card>
-                        <div className="row">
-                            <div className="col-md-2">
-                                <CardImg width="20%" src={lead.image} alt={lead.name} />
-                            </div>
-                            <div className="col-md-8">
-                                <CardTitle>
-                                    {lead.name}
-                                </CardTitle>
-
-                                <CardTitle>
-                                    {lead.designation}
-                                </CardTitle>
-
-                                <CardTitle>
-                                    {lead.description}
-                                </CardTitle>
-                            </div>
-                        </div>
-                    </Card>
-                </div>
-            );
-        });
-
-
-
-
         return (
             <div className="container">
                 <div className="row">
@@ -98,7 +69,12 @@ class About extends Component {
                     </div>
                     <div className="col-12">
                         <Media list>
-                            {leaders}
+                        {/** 1. Make an object of  RenderLeader 
+                         *   2. Add an **instance variable** leadersParam to the object
+                         *   3. Pass LEADERS as leadersParam parameter in the constructor.
+                         *   Javastyle: RenderLeader r = new RenderLeader(LEADERS)
+                        */}
+                        <RenderLeader leadersParam={LEADERS}/>
                         </Media>
                     </div>
                 </div>
